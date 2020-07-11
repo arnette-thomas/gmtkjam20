@@ -12,7 +12,7 @@ func _ready():
 		var boid = boidScn.instance()
 		boid.position.x = rng.randi_range(0, VIEWPORT_SIZE.x)
 		boid.position.y = rng.randi_range(0, VIEWPORT_SIZE.y)
-		add_child(boid)
+		$Boids.add_child(boid)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
