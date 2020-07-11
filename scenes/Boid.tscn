@@ -4,18 +4,20 @@
 [ext_resource path="res://scenes/Boid.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 30.3204
+radius = 50.638
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 82.7877
+radius = 64.0557
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 119.478
+radius = 112.03
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 182.43
+radius = 315.881
 
-[node name="Boid" type="KinematicBody2D"]
+[node name="Boid" type="KinematicBody2D" groups=[
+"Boid",
+]]
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 2 )
 max_speed = 150
@@ -39,6 +41,7 @@ shape = SubResource( 3 )
 [node name="AttractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionArea"]
+position = Vector2( 0, 1.49831 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="RepulsionArea" to="." method="_on_RepulsionArea_body_entered"]
 [connection signal="body_exited" from="RepulsionArea" to="." method="_on_RepulsionArea_body_exited"]
