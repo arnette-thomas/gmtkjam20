@@ -1,4 +1,4 @@
-class_name AttracEffect
+class_name Cursor
 
 extends Area2D
 
@@ -22,6 +22,11 @@ func _process(delta):
 		active = true
 	else:
 		active = false
+		
+	if Input.is_action_just_released("scale_up"):
+		coef += 1
+	if Input.is_action_just_released("scale_down"):
+		coef -= (1 if coef > 1 else 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):

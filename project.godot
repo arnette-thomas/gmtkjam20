@@ -10,17 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
-"class": "AttracEffect",
+"class": "Cursor",
 "language": "GDScript",
 "path": "res://scenes/cursor.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Reference",
 "class": "Person",
 "language": "GDScript",
 "path": "res://scenes/person.gd"
 } ]
 _global_script_class_icons={
-"AttracEffect": "",
+"Cursor": "",
 "Person": ""
 }
 
