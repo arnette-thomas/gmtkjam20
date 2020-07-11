@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
-[ext_resource path="res://person.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/person.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/cursor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 256, 48 )
@@ -306,3 +307,5 @@ position = Vector2( 288, 208 )
 
 [node name="Person25" parent="Node" instance=ExtResource( 2 )]
 position = Vector2( 248, 208 )
+
+[node name="Cursor" parent="." instance=ExtResource( 4 )]
