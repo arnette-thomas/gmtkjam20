@@ -33,15 +33,15 @@ func _process(delta):
 	v_attraction = rule_attraction()
 	
 	$Sprite.rotation = velocity.angle() + (PI / 2)
+	$RayCast2D.rotation = velocity.angle() + (PI / 2)
 	
 func _physics_process(delta):
 	# Raycasting to be afraid of walls
-	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(self.position, self.position + velocity.normalized() * get_node("AttractionArea/CollisionShape2D").shape.radius)
-	if !result.empty():
-		var diff : Vector2 = result.position - self.position
-		if diff.length() <= get_node("RepulsionArea/CollisionShape2D").shape.radius * 2:
-			velocity -= (result.position - self.position)
+	if $RayCast2D.is_colliding():
+		var collision_point = $RayCast2D.get_collision_point()
+		var diff = collision_point - self.position
+		if diff.length() <= $RepulsionArea/CollisionShape2D.shape.radius:
+			velocity -= diff
 	
 	velocity += v_repulsion + v_orientation + v_attraction
 	velocity = velocity.clamped(max_speed)
@@ -54,19 +54,23 @@ func rule_repulsion():
 	for node in nodes_repulsion:
 		if node != self:
 			c -= (node.position - self.position)
+	c /= nodes_repulsion.size() - (1 if nodes_repulsion.size() > 1 else 0)
 	return c
 	
 func rule_orientation():
 	var c = Vector2(0, 0)
 	for node in nodes_orientation:
-		c += node.velocity
+		if node != self && !(node in nodes_repulsion):
+			c += node.velocity
+	c /= nodes_orientation.size() - (1 if nodes_orientation.size() > 1 else 0)
 	return (c - self.velocity) / 8
 	
 func rule_attraction():
 	var c = Vector2(0, 0)
 	for node in nodes_attraction:
-		c += node.position
-	c /= nodes_attraction.size()
+		if node != self && !(node in nodes_repulsion) && !(node in nodes_orientation):
+			c += node.position
+	c /= nodes_attraction.size() - (1 if nodes_attraction.size() > 1 else 0)
 	return (c - self.position) / 100
 	
 ### SLOTS ###

@@ -7,13 +7,13 @@
 radius = 50.638
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 64.0557
+radius = 72.1581
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 112.03
+radius = 207.728
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 315.881
+radius = 406.019
 
 [node name="Boid" type="KinematicBody2D" groups=[
 "Boid",
@@ -41,8 +41,12 @@ shape = SubResource( 3 )
 [node name="AttractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionArea"]
-position = Vector2( 0, 1.49831 )
+position = Vector2( 1.49829, 1.49831 )
 shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -50 )
 [connection signal="body_entered" from="RepulsionArea" to="." method="_on_RepulsionArea_body_entered"]
 [connection signal="body_exited" from="RepulsionArea" to="." method="_on_RepulsionArea_body_exited"]
 [connection signal="body_entered" from="OrientationArea" to="." method="_on_OrientationArea_body_entered"]
