@@ -2,14 +2,11 @@ class_name Cursor
 
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var radius
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	radius = $CollisionShape2D.shape.radius
 
 var coef = 1
 var active = false
@@ -36,3 +33,7 @@ func _physics_process(_delta):
 			if person:
 				var diff = person.position - position
 				person.add_effect(coef * diff.normalized())
+
+func _draw():
+	draw_circle(position, radius, Color(1, 0, 0, 0.5))
+	draw_arc(position, radius, 0, 2*PI, 30, Color(0,0,0,1), 3)
