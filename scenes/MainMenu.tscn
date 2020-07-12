@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/Kenney_Pixel_Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Kenney_Pixel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/arrowRightV2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 380.0
+margin_bottom = 380.0
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+margin_right = 380.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+text = "Crowd Control"
+align = 1
+
+[node name="VBoxOptions" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 50.0
+margin_right = 380.0
+margin_bottom = 360.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+margin_top = 76.0
+margin_right = 380.0
+margin_bottom = 126.0
+mouse_default_cursor_shape = 2
+
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 3 )
+
+[node name="StartLabel" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 175.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Game"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+margin_top = 130.0
+margin_right = 380.0
+margin_bottom = 180.0
+mouse_default_cursor_shape = 2
+
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 3 )
+
+[node name="Credits" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 134.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+margin_top = 184.0
+margin_right = 380.0
+margin_bottom = 234.0
+mouse_default_cursor_shape = 2
+
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 95.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+text = "Exit"
+
+[node name="FooterLabel" type="Label" parent="VBoxContainer"]
+margin_top = 364.0
+margin_right = 380.0
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 5 )
+text = "V1.0 - GMTK Game Jam 2020"
+align = 2
