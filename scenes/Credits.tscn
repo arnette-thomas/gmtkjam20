@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/Kenney_Pixel_Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Kenney_Pixel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Credits.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Clickable.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 380.0
+margin_bottom = 380.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 380.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+text = "Credits"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 50.0
+margin_right = 380.0
+margin_bottom = 147.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2"]
+margin_top = 14.0
+margin_right = 380.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "ARNETTE Thomas"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2"]
+margin_top = 38.0
+margin_right = 380.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 3 )
+text = "BAR Augustin"
+
+[node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer2"]
+margin_top = 62.0
+margin_right = 380.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 3 )
+text = "VERNAY Julien"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 151.0
+margin_right = 380.0
+margin_bottom = 248.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4"]
+margin_top = 3.0
+margin_right = 380.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "World Graphics from Kenney Game Assets"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4"]
+margin_top = 27.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 2 )
+text = "Character Sprites by Charles Gabriel
+https://opengameart.org/content/
+16x18-rpg-characters-hair-clothing-pack"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 252.0
+margin_right = 380.0
+margin_bottom = 349.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3"]
+margin_right = 380.0
+margin_bottom = 97.0
+size_flags_vertical = 15
+custom_fonts/font = SubResource( 2 )
+text = "Created with Gogot engine, 
+during GMTK Game Jam 2020"
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 353.0
+margin_right = 380.0
+margin_bottom = 380.0
+alignment = 2
+script = ExtResource( 4 )
+
+[node name="BackLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 328.0
+margin_right = 380.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+align = 2

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/Kenney_Pixel_Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fonts/Kenney_Pixel.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/arrowRightV2.png" type="Texture" id=3]
+[ext_resource path="res://assets/arrowEmpty.png" type="Texture" id=3]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Clickable.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -66,18 +67,19 @@ margin_bottom = 360.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+[node name="StartOption" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
 margin_top = 76.0
 margin_right = 380.0
 margin_bottom = 126.0
 mouse_default_cursor_shape = 2
+script = ExtResource( 5 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/StartOption"]
 margin_right = 50.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
-[node name="StartLabel" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
+[node name="StartLabel" type="Label" parent="VBoxContainer/VBoxOptions/StartOption"]
 margin_left = 54.0
 margin_top = 11.0
 margin_right = 175.0
@@ -85,18 +87,19 @@ margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
 text = "Start Game"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+[node name="CreditsOption" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
 margin_top = 130.0
 margin_right = 380.0
 margin_bottom = 180.0
 mouse_default_cursor_shape = 2
+script = ExtResource( 5 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/CreditsOption"]
 margin_right = 50.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
-[node name="Credits" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
+[node name="Credits" type="Label" parent="VBoxContainer/VBoxOptions/CreditsOption"]
 margin_left = 54.0
 margin_top = 11.0
 margin_right = 134.0
@@ -104,18 +107,19 @@ margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
 text = "Credits"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
+[node name="ExitOption" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
 margin_top = 184.0
 margin_right = 380.0
 margin_bottom = 234.0
 mouse_default_cursor_shape = 2
+script = ExtResource( 5 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/ExitOption"]
 margin_right = 50.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
+[node name="ExitLabel" type="Label" parent="VBoxContainer/VBoxOptions/ExitOption"]
 margin_left = 54.0
 margin_top = 11.0
 margin_right = 95.0
