@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/person.tscn" type="PackedScene" id=2]
@@ -58,6 +58,8 @@ extents = Vector2( 8, 16 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 8, 32 )
+
+[sub_resource type="TileSet" id=19]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -309,3 +311,7 @@ position = Vector2( 288, 208 )
 position = Vector2( 248, 208 )
 
 [node name="Cursor" parent="." instance=ExtResource( 4 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 19 )
+format = 1
