@@ -1,17 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://lvls/map.tmx" type="PackedScene" id=1]
+[ext_resource path="res://lvls/lvl1IFO.tmx" type="PackedScene" id=1]
 [ext_resource path="res://scenes/cursor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/spawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://lvls/lvl1.tmx" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 8, 21.3898 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 24 )
 
 [node name="lvl1" type="Node2D"]
 
-[node name="map" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 16 )
+[node name="lvl1" parent="." instance=ExtResource( 5 )]
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -19,71 +22,40 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 build_mode = 1
-polygon = PoolVector2Array( 96, 256, 96, 80, 128, 80, 128, 64, 224, 64, 224, 80, 240, 80, 240, 48, 256, 48, 256, 32, 288, 32, 288, 16, 304, 16, 304, 48, 320, 48, 320, 32, 352, 32, 352, 16, 400, 16, 400, 32, 416, 32, 416, 16, 448, 16, 448, 32, 480, 32, 480, 128, 464, 128, 464, 240, 448, 240, 448, 288, 464, 288, 464, 320, 368, 320, 368, 224, 320, 224, 320, 160, 272, 160, 272, 224, 224, 224, 224, 272, 112, 272, 112, 256 )
+polygon = PoolVector2Array( 96, 240, 96, 64, 128, 64, 128, 48, 224, 48, 224, 64, 240, 64, 240, 80, 256, 80, 416, 80, 416, 64, 432, 64, 432, 48, 464, 48, 464, 16, 480, 16, 480, 144, 448, 144, 448, 160, 400, 160, 400, 304, 336, 304, 336, 224, 224, 224, 224, 256, 208, 256, 208, 144, 160, 144, 160, 256, 112, 256, 112, 240 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 264, 104 )
+position = Vector2( 231.802, 172.365 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 360, 104 )
+position = Vector2( 328.038, 172.365 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 392, 88 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 176 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 192 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 200 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 176 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 192 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 200 )
-shape = SubResource( 1 )
+position = Vector2( 280, 168 )
+shape = SubResource( 2 )
 
 [node name="goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 288, 136 )
+visible = false
+position = Vector2( 416, 240 )
 nb_needed = 30
 size = Vector2( 64, 128 )
+team = "yellow"
 
 [node name="Spawns" type="Node" parent="."]
 
 [node name="Spawner1" parent="Spawns" instance=ExtResource( 4 )]
-position = Vector2( 160, 224 )
+position = Vector2( 168, 96 )
 radius = 40.0
 nb_spawn = 20
 people_parent = NodePath("../../People")
 
-[node name="Spawner2" parent="Spawns" instance=ExtResource( 4 )]
-position = Vector2( 144, 120 )
-radius = 30.0
-nb_spawn = 10
-people_parent = NodePath("../../People")
+[node name="People" type="YSort" parent="."]
 
-[node name="Spawner3" parent="Spawns" instance=ExtResource( 4 )]
-position = Vector2( 200, 152 )
-nb_spawn = 20
-people_parent = NodePath("../../People")
+[node name="lvl1IFO" parent="." instance=ExtResource( 1 )]
 
 [node name="Cursor" parent="." instance=ExtResource( 2 )]
-
-[node name="People" type="YSort" parent="."]
