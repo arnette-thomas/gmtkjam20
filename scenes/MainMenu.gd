@@ -1,11 +1,11 @@
-extends MarginContainer
+extends Node
 
 var arrow_texture = preload("res://assets/arrowRight.png")
 var empty_texture = preload("res://assets/arrowEmpty.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var options = $VBoxContainer/VBoxOptions.get_children()
+	var options = $UI/VBoxContainer/VBoxOptions.get_children()
 	for node in options:
 		node.connect("mouse_entered", self, "on_option_mouseentered", [node])
 		node.connect("mouse_exited", self, "on_option_mouseleaved", [node])
@@ -33,6 +33,8 @@ func on_option_mouseleaved(emitter):
 	arrow.set_texture(empty_texture)
 
 func on_option_clicked(node):
+	if node.name == 'StartOption':
+		get_tree().change_scene("res://lvls/lvl1.tscn")
 	if node.name == 'CreditsOption':
 		get_tree().change_scene("res://scenes/credits.tscn")
 	if node.name == 'ExitOption':
