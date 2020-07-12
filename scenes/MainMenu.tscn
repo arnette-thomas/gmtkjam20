@@ -115,16 +115,19 @@ shape = SubResource( 13 )
 position = Vector2( 160, 104 )
 nb_spawn = 10
 people_parent = NodePath("../People")
+team = "brown"
 
 [node name="Spawner2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 368, 112 )
 nb_spawn = 10
 people_parent = NodePath("../People")
+team = "brown"
 
 [node name="Spawner3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 320, 224 )
 nb_spawn = 10
 people_parent = NodePath("../People")
+team = "brown"
 
 [node name="People" type="YSort" parent="."]
 
