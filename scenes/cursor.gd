@@ -32,7 +32,7 @@ func _physics_process(_delta):
 		for body in get_overlapping_bodies():
 			var person = body as Person
 			if person:
-				var diff = person.position - position
+				var diff = person.global_position - global_position
 				person.add_effect(coef * diff.normalized())
 
 func _draw():
@@ -50,3 +50,4 @@ func _draw():
 		
 	draw_circle(Vector2.ZERO, radius, color)
 	draw_arc(Vector2.ZERO, radius, 0, 2*PI, 30, Color(0,0,0,0.3), 3)
+	
