@@ -20,6 +20,8 @@ func _ready():
 		node.connect("mouse_entered", self, "on_option_mouseentered", [node])
 		node.connect("mouse_exited", self, "on_option_mouseleaved", [node])
 		node.connect("clicked", self, "on_option_clicked", [node])
+	if (get_node(parent) as Main).get_node("AudioStreamPlayer").stream_paused != muted:
+		toggle_mute()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,6 +44,8 @@ func toggle_mute():
 		btn.set_hover_texture(music_on_hover)
 		btn.set_pressed_texture(music_on_press)
 	muted = !muted
+	
+	(get_node(parent) as Main).get_node("AudioStreamPlayer").stream_paused = muted
 	
 
 func _on_Pause_btn_pressed():
