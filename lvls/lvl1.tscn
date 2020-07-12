@@ -44,16 +44,16 @@ shape = SubResource( 2 )
 [node name="Spawns" type="Node" parent="."]
 
 [node name="Spawner1" parent="Spawns" instance=ExtResource( 4 )]
-position = Vector2( 128, 208 )
-nb_spawn = 30
+position = Vector2( 168, 96 )
+radius = 40.0
+nb_spawn = 20
 people_parent = NodePath("../../People")
 team = "yellow"
 
 [node name="goal2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 368, 253.998 )
+position = Vector2( 368, 248 )
 nb_needed = 15
-size = Vector2( 64, 100 )
-team = "yellow"
+size = Vector2( 32, 80 )
 
 [node name="People" type="YSort" parent="."]
 
