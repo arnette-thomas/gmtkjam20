@@ -4,7 +4,10 @@ extends Node2D
 
 var lvls = [
 	preload("res://lvls/lvl1.tscn"),
-	preload("res://lvls/lvl2.tscn")
+	preload("res://lvls/lvl2.tscn"),
+	preload("res://lvls/lvl3.tscn"),
+	preload("res://lvls/lvl4.tscn"),
+	preload("res://lvls/lvl5.tscn")
 ]
 var curr_lvl = -1 # -1 is titlescreen
 
@@ -20,7 +23,10 @@ func goto_scene(new_scene):
 func next_level():
 	if $Timer.time_left == 0:
 		curr_lvl += 1
-		goto_scene(lvls[curr_lvl])
+		if curr_lvl < lvls.size():
+			goto_scene(lvls[curr_lvl])
+		else:
+			goto_titlescreen()
 
 func goto_titlescreen():
 	if $Timer.time_left == 0:
