@@ -6,7 +6,7 @@ const PI_4 = PI/4
 var SELF_PONDER = 5
 var RAD_REPULS = 0.3
 var RAD_COHES = 0.7
-var EFFECT_PONDER = 15
+var EFFECT_PONDER = 159
 
 export (int) var SPEED = 100
 
