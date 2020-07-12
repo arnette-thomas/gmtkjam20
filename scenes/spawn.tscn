@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/spawn.gd" type="Script" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Spawner" type="Node2D"]
 script = ExtResource( 1 )
 radius = 20.0
 nb_spawn = 0

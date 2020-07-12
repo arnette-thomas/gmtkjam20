@@ -1,3 +1,4 @@
+
 class_name Person
 
 extends KinematicBody2D
@@ -5,10 +6,12 @@ extends KinematicBody2D
 const PI_4 = PI/4
 var SELF_PONDER = 5
 var RAD_REPULS = 0.3
-var RAD_COHES = 0.7
-var EFFECT_PONDER = 159
+var RAD_COHES = 0.75
+var EFFECT_PONDER = 50
 
-export (int) var SPEED = 100
+export (int) var SPEED = 80
+export (String) var TEAM = "brown"
+export (String) var anim = "down"
 
 var angle = 0
 var direction = Vector2.ZERO
@@ -22,26 +25,56 @@ func add_effect(dir):
 	nb_effects += 1
 	pass
 
+
 func set_angle(a):
 	a = fmod(a, 2*PI)
 	angle = a
 	direction.x = cos(angle)
 	direction.y = sin(angle)
 	if a > -3*PI_4 and a <= -PI_4:
-		$AnimatedSprite.play("up")
+		anim = "up"
 	elif a > -PI_4 and a <= PI_4:
-		$AnimatedSprite.play("right")
+		anim = "right"
 	elif a > PI_4 and a <= 3*PI_4:
-		$AnimatedSprite.play("down")
+		anim = "down"
 	else:
-		$AnimatedSprite.play("left")
+		anim = "left"
+
 
 func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	set_angle(rng.randf_range(0, 2*PI))
+	$Sprite.texture = Teams.textures[TEAM]
+	$Sprite.region_enabled = true
+	$Timer.start()
 
+const SPRITE_DIM = Vector2(16,18)
 
+const lut_ry = {
+	up = 0,
+	left = 3,
+	right = 1,
+	down = 2
+}
+
+func get_rx(progress):
+	print(progress)
+	var rx
+	if progress < 0.25:
+		rx = 0
+	elif progress < 0.5:
+		rx = 1
+	elif progress < 0.75:
+		rx = 2
+	else:
+		rx = 1
+	return rx * SPRITE_DIM.x
+
+func _process(_delta):
+	var rx = get_rx(1 - $Timer.time_left / $Timer.wait_time)
+	var ry = lut_ry[anim] * SPRITE_DIM.y
+	$Sprite.region_rect = Rect2(rx, ry, SPRITE_DIM.x, SPRITE_DIM.y)
 
 func _physics_process(_delta):
 	var left = $left1.is_colliding() or $left2.is_colliding() or $left3.is_colliding()
@@ -86,7 +119,7 @@ func _physics_process(_delta):
 
 	vel = move_and_slide(vel)
 	if vel.x == 0 and vel.y == 0:
-		$AnimatedSprite.stop()
+		pass
 	else:
 		set_angle(atan2(vel.y, vel.x))
 		

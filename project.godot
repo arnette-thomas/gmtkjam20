@@ -30,6 +30,10 @@ config/name="Proto"
 run/main_scene="res://lvls/lvl1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Teams="*res://scenes/teams.gd"
+
 [display]
 
 window/size/width=480
