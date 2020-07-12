@@ -5,7 +5,6 @@ var empty_texture = preload("res://assets/arrowEmpty.png")
 var credits = preload("res://scenes/Credits.tscn").instance()
 var main = preload("res://scenes/MainMenuUI.tscn").instance()
 
-export (PackedScene) var first_lvl_scene
 
 var base_size
 

@@ -18,8 +18,14 @@ func goto_scene(new_scene):
 	$Timer.start()
 
 func next_level():
-	curr_lvl += 1
-	goto_scene(lvls[curr_lvl])
+	if $Timer.time_left == 0:
+		curr_lvl += 1
+		goto_scene(lvls[curr_lvl])
+
+func goto_titlescreen():
+	if $Timer.time_left == 0:
+		curr_lvl = -1
+		goto_scene(titlescreen)
 
 func _ready():
 	goto_scene(titlescreen)
@@ -35,4 +41,9 @@ func _process(_delta):
 			curr_scene_instance.queue_free()
 		curr_scene_instance = next_scene.instance()
 		add_child(curr_scene_instance)
+		if curr_lvl >= 0:
+			$CanvasLayer/Pause.show()
+			curr_scene_instance.connect("win", self, "next_level")
+		else:
+			$CanvasLayer/Pause.hide()
 	prev_progress = progress

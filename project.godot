@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Proto"
-run/main_scene="res://lvls/lvl1.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
