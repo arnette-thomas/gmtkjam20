@@ -8,6 +8,8 @@ func _ready():
 	connect("mouse_entered", self, "on_mouse_entered")
 	connect("mouse_exited", self, "on_mouse_exited")
 
+func reset():
+	is_hovered = false
 
 func _input(event):
 	if event is InputEventMouseButton and is_hovered:
