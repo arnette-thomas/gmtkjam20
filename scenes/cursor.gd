@@ -3,6 +3,9 @@ class_name Cursor
 
 extends Area2D
 
+export(bool) var AllowAttract = true
+export(bool) var AllowRepulse = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.start()
@@ -13,8 +16,11 @@ var active = false
 func _process(_delta):
 	position = get_viewport().get_mouse_position()
 	var attract_mode = Input.is_action_pressed("attract")
-	if attract_mode || Input.is_action_pressed("repulse"):
-		coef = abs(coef) * (-1 if attract_mode else 1)
+	if Input.is_action_pressed("attract") and AllowAttract:
+		coef = -abs(coef)
+		active = true
+	elif Input.is_action_pressed("repulse") and AllowRepulse:
+		coef = abs(coef)
 		active = true
 	else:
 		active = false
