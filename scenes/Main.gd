@@ -28,6 +28,12 @@ func next_level():
 		else:
 			goto_titlescreen()
 
+func restart_level():
+	if curr_lvl < lvls.size():
+		goto_scene(lvls[curr_lvl])
+	else:
+		goto_titlescreen()
+
 func goto_titlescreen():
 	if $Timer.time_left == 0:
 		curr_lvl = -1

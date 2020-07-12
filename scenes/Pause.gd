@@ -29,6 +29,9 @@ func _ready():
 #	pass
 
 func toggle_pause():
+	var title = $VBoxContainer/HBoxContainer/Title
+	title.visible = !title.visible
+	
 	var pause_menu = $VBoxContainer/PauseMenu
 	pause_menu.visible = !pause_menu.visible
 	get_tree().paused = pause_menu.visible
@@ -53,6 +56,12 @@ func _on_Pause_btn_pressed():
 	
 func on_option_clicked(node):
 	if node.name == 'ResumeOption':
+		toggle_pause()
+	if node.name == 'RestartOption':
+		(get_node(parent) as Main).restart_level()
+		toggle_pause()
+	if node.name == 'NextOption':
+		(get_node(parent) as Main).next_level()
 		toggle_pause()
 	if node.name == 'MainMenuOption':
 		#get_tree().change_scene("res://scenes/MainMenu.tscn")
