@@ -58,7 +58,6 @@ team = "yellow"
 position = Vector2( 440, 48 )
 nb_needed = 15
 size = Vector2( 64, 80 )
-team = "yellow"
 
 [node name="People" type="YSort" parent="."]
 

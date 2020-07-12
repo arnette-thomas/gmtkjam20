@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
+[ext_resource path="res://scenes/CarPath.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvls/menuIFO.tmx" type="PackedScene" id=2]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://lvls/menu.tmx" type="PackedScene" id=6]
@@ -42,6 +43,16 @@ extents = Vector2( 64, 16 )
 extents = Vector2( 10, 56 )
 
 [sub_resource type="RectangleShape2D" id=13]
+
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -32, 176, 0, 0, 0, 0, 80, 176, 0, 0, 0, 0, 80, -24 )
+}
+
+[sub_resource type="Curve2D" id=15]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 48, -16, 0, 0, 0, 0, 48, 144, 0, 0, 0, 0, -32, 144 )
+}
 
 [node name="MainMenu" type="Node"]
 script = ExtResource( 4 )
@@ -130,3 +141,16 @@ people_parent = NodePath("../People")
 
 [node name="menuIFO" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 16 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 14 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource( 15 )
+
+[node name="CarPath" parent="." instance=ExtResource( 1 )]
+path_to_follow = NodePath("../Path2D")
+
+[node name="CarPath2" parent="." instance=ExtResource( 1 )]
+path_to_follow = NodePath("../Path2D2")
+CAR_SPEED = 150.0
