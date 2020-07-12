@@ -1,3 +1,4 @@
+
 class_name Cursor
 
 extends Area2D
@@ -9,7 +10,7 @@ func _ready():
 var coef = 1
 var active = false
 
-func _process(delta):
+func _process(_delta):
 	position = get_viewport().get_mouse_position()
 	var attract_mode = Input.is_action_pressed("attract")
 	if attract_mode || Input.is_action_pressed("repulse"):

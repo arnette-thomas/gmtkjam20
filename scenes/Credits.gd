@@ -1,5 +1,6 @@
 extends MarginContainer
 
+signal back
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,4 +21,4 @@ func on_back_mouseleaved(emitter : Control):
 	label.set('custom_colors/font_color', Color(1, 1, 1, 1))
 	
 func on_back_clicked():
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	emit_signal("back")
