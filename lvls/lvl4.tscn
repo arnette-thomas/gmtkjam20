@@ -27,6 +27,7 @@ polygon = PoolVector2Array( 128, 64, 224, 64, 224, 80, 240, 80, 240, 128, 384, 1
 position = Vector2( 160, 192 )
 nb_needed = 15
 size = Vector2( 64, 128 )
+team = "yellow"
 
 [node name="goal2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 416, 224 )
