@@ -42,6 +42,7 @@ func goto_titlescreen():
 func _ready():
 	goto_scene(titlescreen)
 	$Timer.stop()
+	$AudioStreamPlayer.playing = true
 
 var prev_progress = -1
 
