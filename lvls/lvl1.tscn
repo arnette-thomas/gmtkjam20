@@ -44,6 +44,7 @@ visible = false
 position = Vector2( 416, 240 )
 nb_needed = 30
 size = Vector2( 64, 128 )
+team = "yellow"
 
 [node name="Spawns" type="Node" parent="."]
 
