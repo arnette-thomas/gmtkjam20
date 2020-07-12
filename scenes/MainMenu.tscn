@@ -1,132 +1,132 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://fonts/Kenney_Pixel_Square.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://fonts/Kenney_Pixel.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/arrowRightV2.png" type="Texture" id=3]
+[ext_resource path="res://lvls/menuIFO.tmx" type="PackedScene" id=2]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://lvls/menu.tmx" type="PackedScene" id=6]
+[ext_resource path="res://scenes/spawn.tscn" type="PackedScene" id=7]
 
-[sub_resource type="DynamicFont" id=1]
-size = 30
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48.2106, 31.8639 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 35
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.0916, 65.8818 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 35
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 63.8783, 33.3883 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 35
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 89.0774, 40.373 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 20
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 31.0118, 33.0314 )
 
-[node name="MainMenu" type="MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = -50.0
-margin_bottom = -50.0
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 163.846 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 67.7199, 18.3482 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 57.0413, 33.0314 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 49.0321, 26.3572 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 23.6702, 35.0337 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 64, 16 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 56 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+[node name="MainMenu" type="Node"]
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 380.0
-margin_bottom = 380.0
-size_flags_horizontal = 3
+[node name="menu" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 16 )
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
-margin_right = 380.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 1 )
-text = "Crowd Control"
-align = 1
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="VBoxOptions" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 50.0
-margin_right = 380.0
-margin_bottom = 360.0
-size_flags_vertical = 3
-alignment = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 48.507, 159.38 )
+shape = SubResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
-margin_top = 76.0
-margin_right = 380.0
-margin_bottom = 126.0
-mouse_default_cursor_shape = 2
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 63.626, 62.3661 )
+shape = SubResource( 2 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
-margin_right = 50.0
-margin_bottom = 50.0
-texture = ExtResource( 3 )
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 174.65, 31.0678 )
+shape = SubResource( 3 )
 
-[node name="StartLabel" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer"]
-margin_left = 54.0
-margin_top = 11.0
-margin_right = 175.0
-margin_bottom = 38.0
-custom_fonts/font = SubResource( 2 )
-text = "Start Game"
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 327.703, 39.3778 )
+shape = SubResource( 4 )
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
-margin_top = 130.0
-margin_right = 380.0
-margin_bottom = 180.0
-mouse_default_cursor_shape = 2
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 437.16, 30.7013 )
+shape = SubResource( 5 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
-margin_right = 50.0
-margin_bottom = 50.0
-texture = ExtResource( 3 )
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 471.866, 161.516 )
+shape = SubResource( 6 )
 
-[node name="Credits" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer2"]
-margin_left = 54.0
-margin_top = 11.0
-margin_right = 134.0
-margin_bottom = 38.0
-custom_fonts/font = SubResource( 3 )
-text = "Credits"
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 402.454, 302.341 )
+shape = SubResource( 7 )
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxOptions"]
-margin_top = 184.0
-margin_right = 380.0
-margin_bottom = 234.0
-mouse_default_cursor_shape = 2
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 278.314, 284.988 )
+shape = SubResource( 8 )
 
-[node name="Arrow" type="TextureRect" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
-margin_right = 50.0
-margin_bottom = 50.0
-texture = ExtResource( 3 )
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 176.199, 295.667 )
+shape = SubResource( 9 )
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxOptions/HBoxContainer3"]
-margin_left = 54.0
-margin_top = 11.0
-margin_right = 95.0
-margin_bottom = 38.0
-custom_fonts/font = SubResource( 4 )
-text = "Exit"
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 184.208, 240.271 )
+shape = SubResource( 10 )
 
-[node name="FooterLabel" type="Label" parent="VBoxContainer"]
-margin_top = 364.0
-margin_right = 380.0
-margin_bottom = 380.0
-custom_fonts/font = SubResource( 5 )
-text = "V1.0 - GMTK Game Jam 2020"
-align = 2
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 64, 304 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 8, 240 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 104, 8 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 264, 232 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 392, 152 )
+shape = SubResource( 13 )
+
+[node name="Spawner" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 104 )
+nb_spawn = 10
+people_parent = NodePath("../People")
+
+[node name="Spawner2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 368, 112 )
+nb_spawn = 10
+people_parent = NodePath("../People")
+
+[node name="Spawner3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 320, 224 )
+nb_spawn = 10
+people_parent = NodePath("../People")
+
+[node name="People" type="YSort" parent="."]
+
+[node name="menuIFO" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 16 )

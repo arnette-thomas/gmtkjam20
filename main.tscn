@@ -181,6 +181,135 @@ position = Vector2( 168, 192 )
 [node name="Person3" parent="Node" instance=ExtResource( 2 )]
 position = Vector2( 208, 232 )
 
+[node name="Person4" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 208, 200 )
+
+[node name="Person5" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 240, 176 )
+
+[node name="Person6" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 200, 176 )
+
+[node name="Person12" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 136, 168 )
+
+[node name="Person11" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 56, 160 )
+
+[node name="Person10" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 96, 200 )
+
+[node name="Person9" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 96, 168 )
+
+[node name="Person8" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 128, 144 )
+
+[node name="Person7" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 88, 144 )
+
+[node name="Person18" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 312, 304 )
+
+[node name="Person17" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 232, 296 )
+
+[node name="Person16" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 272, 336 )
+
+[node name="Person15" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 272, 304 )
+
+[node name="Person14" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 304, 280 )
+
+[node name="Person13" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 264, 280 )
+
+[node name="Person24" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 448, 272 )
+
+[node name="Person34" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 360, 424 )
+
+[node name="Person38" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 240, 352 )
+
+[node name="Person42" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 296, 416 )
+
+[node name="Person46" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 352, 184 )
+
+[node name="Person23" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 368, 264 )
+
+[node name="Person22" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 408, 304 )
+
+[node name="Person21" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 408, 272 )
+
+[node name="Person20" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 440, 248 )
+
+[node name="Person19" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 400, 248 )
+
+[node name="Person33" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 320, 424 )
+
+[node name="Person32" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 352, 400 )
+
+[node name="Person31" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 312, 400 )
+
+[node name="Person37" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 200, 352 )
+
+[node name="Person36" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 232, 328 )
+
+[node name="Person35" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 192, 328 )
+
+[node name="Person41" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 256, 416 )
+
+[node name="Person40" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 288, 392 )
+
+[node name="Person39" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 248, 392 )
+
+[node name="Person45" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 128, 320 )
+
+[node name="Person44" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 312, 168 )
+
+[node name="Person43" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 152, 336 )
+
+[node name="Person30" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 296, 232 )
+
+[node name="Person29" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 216, 224 )
+
+[node name="Person28" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 256, 264 )
+
+[node name="Person27" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 256, 232 )
+
+[node name="Person26" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 288, 208 )
+
+[node name="Person25" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 248, 208 )
+
 [node name="Cursor" parent="." instance=ExtResource( 4 )]
 
 [node name="TileMap" type="TileMap" parent="."]
