@@ -9,9 +9,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 7.99998 )
 
-[node name="lvl1" type="Node2D"]
+[node name="lvl3" type="Node2D"]
 
-[node name="lvl2" parent="." instance=ExtResource( 5 )]
+[node name="lvl3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 16 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -19,17 +20,17 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 build_mode = 1
-polygon = PoolVector2Array( 0, 176, 96, 176, 96, 64, 128, 64, 128, 48, 224, 48, 240, 48, 240, 64, 416, 64, 432, 64, 432, 48, 464, 48, 464, 16, 480, 16, 480, 144, 448, 144, 448, 160, 400, 160, 400, 176, 336, 176, 336, 192, 400, 190.5, 400, 304, 336, 304, 336, 224, 288, 224, 288, 144, 368, 144, 368, 128, 272, 128, 272, 224, 224, 224, 224, 256, 208, 256, 208, 192, 160, 192, 160, 256, 128, 256, 128, 304, 0, 304, 0, 288, 16, 288, 16, 208, 32, 208, 32, 192, 0, 192 )
+polygon = PoolVector2Array( 0, 192, 96, 192, 96, 80, 128, 80, 128, 64, 240, 64, 240, 80, 432, 80, 432, 64, 464, 64, 464, 32, 480, 32, 480, 160, 448, 160, 448, 176, 400, 176, 400, 192, 336, 192, 336, 208, 400, 208, 400, 320, 336, 320, 336, 256, 288, 256, 288, 160, 368, 160, 368, 144, 272, 144, 272, 256, 224, 256, 224, 272, 208, 272, 208, 208, 160, 208, 160, 272, 128, 272, 128, 320, 0, 320, 0, 304, 16, 304, 16, 224, 32, 224, 32, 208, 0, 208 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 192, 88 )
+position = Vector2( 192, 104 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 208, 168 )
+position = Vector2( 208, 184 )
 shape = SubResource( 1 )
 
 [node name="goal" parent="." instance=ExtResource( 3 )]
@@ -45,11 +46,18 @@ team = "yellow"
 position = Vector2( 72, 256 )
 radius = 40.0
 nb_spawn = 20
-people_parent = NodePath("../../People")
+people_parent = NodePath("../../../lvl3/People")
+
+[node name="goal2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 368, 264 )
+nb_needed = 10
+size = Vector2( 64, 80 )
+team = "brown"
 
 [node name="People" type="YSort" parent="."]
 
 [node name="lvl2IFO" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 16 )
 
 [node name="Cursor" parent="." instance=ExtResource( 2 )]
 AllowAttract = false
