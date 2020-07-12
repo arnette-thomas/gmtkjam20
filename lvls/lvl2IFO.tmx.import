@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/lvl2IFO.tmx-ec62654fc9b89bface548b2dc984687e.scn"
+
+[deps]
+
+source_file="res://lvls/lvl2IFO.tmx"
+dest_files=[ "res://.import/lvl2IFO.tmx-ec62654fc9b89bface548b2dc984687e.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""
