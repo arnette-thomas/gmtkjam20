@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://lvls/map.tmx" type="PackedScene" id=1]
 [ext_resource path="res://scenes/cursor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/spawn.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -59,20 +60,30 @@ shape = SubResource( 1 )
 position = Vector2( 344, 200 )
 shape = SubResource( 1 )
 
-[node name="Cursor" parent="." instance=ExtResource( 2 )]
+[node name="goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 408, 224 )
+nb_needed = 30
+size = Vector2( 64, 128 )
 
 [node name="Spawns" type="Node" parent="."]
 
-[node name="Node2D" parent="Spawns" instance=ExtResource( 4 )]
+[node name="Spawner1" parent="Spawns" instance=ExtResource( 4 )]
 position = Vector2( 160, 224 )
 radius = 40.0
 nb_spawn = 20
+people_parent = NodePath("../../People")
 
-[node name="Node2D2" parent="Spawns" instance=ExtResource( 4 )]
+[node name="Spawner2" parent="Spawns" instance=ExtResource( 4 )]
 position = Vector2( 144, 120 )
 radius = 30.0
 nb_spawn = 10
+people_parent = NodePath("../../People")
 
-[node name="Node2D3" parent="Spawns" instance=ExtResource( 4 )]
+[node name="Spawner3" parent="Spawns" instance=ExtResource( 4 )]
 position = Vector2( 200, 152 )
 nb_spawn = 20
+people_parent = NodePath("../../People")
+
+[node name="Cursor" parent="." instance=ExtResource( 2 )]
+
+[node name="People" type="YSort" parent="."]

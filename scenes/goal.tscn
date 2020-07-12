@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/goal.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Kenney_Bold.ttf" type="DynamicFontData" id=2]
 
-[node name="goal" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.278431, 0.278431, 0.278431, 1 )
+border_blend = true
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 64 )
+
+[node name="goal" type="Area2D"]
 script = ExtResource( 1 )
+font = SubResource( 1 )
+style_box = SubResource( 2 )
+size = Vector2( 64, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
