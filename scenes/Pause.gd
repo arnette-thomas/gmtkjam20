@@ -36,6 +36,8 @@ func toggle_pause():
 	pause_menu.visible = !pause_menu.visible
 	get_tree().paused = pause_menu.visible
 	
+	(get_node(parent) as Main).get_node("AudioStreamPlayer").stream_paused = muted
+	
 func toggle_mute():
 	var btn = $VBoxContainer/HBoxContainer/Mute_btn
 	if muted:

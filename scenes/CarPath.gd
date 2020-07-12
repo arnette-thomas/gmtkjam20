@@ -37,7 +37,6 @@ func _on_Timer_timeout():
 	newcar.path_ref = pathfollow
 
 func _physics_process(delta):
-	print(get_children().size())
 	for child in get_children():
 		var car = child as Car
 		if car:
