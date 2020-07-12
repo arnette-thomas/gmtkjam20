@@ -19,14 +19,10 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 build_mode = 1
-polygon = PoolVector2Array( 96, 256, 96, 80, 128, 80, 128, 64, 224, 64, 224, 80, 240, 80, 240, 48, 256, 48, 256, 32, 288, 32, 288, 16, 304, 16, 304, 48, 320, 48, 320, 32, 352, 32, 352, 16, 400, 16, 400, 32, 416, 32, 416, 16, 448, 16, 448, 32, 480, 32, 480, 128, 464, 128, 464, 240, 448, 240, 448, 288, 464, 288, 464, 320, 368, 320, 368, 224, 320, 224, 320, 160, 272, 160, 272, 224, 224, 224, 224, 272, 112, 272, 112, 256 )
+polygon = PoolVector2Array( 96, 256, 96, 80, 128, 80, 128, 64, 224, 64, 224, 80, 240, 80, 240, 48, 256, 48, 256, 32, 288, 32, 288, 16, 304, 16, 304, 48, 320, 48, 320, 32, 352, 32, 352, 16, 400, 16, 400, 32, 416, 32, 416, 16, 448, 16, 448, 32, 480, 32, 480, 128, 464, 128, 464, 240, 448, 240, 448, 288, 464, 288, 464, 320, 368, 320, 368, 224, 320, 224, 320, 176, 272, 176, 272, 224, 224, 224, 224, 272, 112, 272, 112, 256 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 264, 104 )
-shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 360, 104 )
@@ -36,32 +32,8 @@ shape = SubResource( 1 )
 position = Vector2( 392, 88 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 176 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 192 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 248, 200 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 176 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 192 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 344, 200 )
-shape = SubResource( 1 )
-
 [node name="goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 288, 136 )
+position = Vector2( 416, 240 )
 nb_needed = 30
 size = Vector2( 64, 128 )
 

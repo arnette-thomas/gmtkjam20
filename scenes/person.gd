@@ -59,7 +59,6 @@ const lut_ry = {
 }
 
 func get_rx(progress):
-	print(progress)
 	var rx
 	if progress < 0.25:
 		rx = 0
