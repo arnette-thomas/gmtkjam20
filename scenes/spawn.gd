@@ -13,7 +13,7 @@ var person = preload("res://scenes/person.tscn")
 func _ready():
 	if not Engine.editor_hint:
 		var rng = RandomNumberGenerator.new()
-		for i in range(nb_spawn):
+		for _i in range(nb_spawn):
 			var p = person.instance()
 			var angle = rng.randf_range(0, 2*PI)
 			var dist = rng.randf_range(0, radius)

@@ -83,12 +83,13 @@ radius = 41.6428
 [node name="Person" type="KinematicBody2D"]
 collision_mask = 3
 script = ExtResource( 2 )
+TEAM = "yellow"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 13 )
 animation = "down"
-frame = 3
-playing = true
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 6 )
@@ -177,3 +178,7 @@ priority = 6.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InfluenceArea"]
 position = Vector2( 27, 27 )
 shape = SubResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
