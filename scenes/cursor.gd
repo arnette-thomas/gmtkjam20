@@ -39,8 +39,11 @@ func _physics_process(_delta):
 		for body in get_overlapping_bodies():
 			var person = body as Person
 			if person:
+				var rad = min($CollisionShape2D.shape.radius, 50)
+				var c = 1 + 2 * (1 - rad/50)
+				
 				var diff = person.global_position - global_position
-				person.add_effect(coef * diff.normalized())
+				person.add_effect(coef * diff.normalized() * c)
 
 func _draw():
 	var progress = $Timer.time_left / $Timer.wait_time
