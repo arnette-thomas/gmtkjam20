@@ -3,6 +3,14 @@ extends MarginContainer
 var arrow_texture = preload("res://assets/arrowRight.png")
 var empty_texture = preload("res://assets/arrowEmpty.png")
 
+var music_off = preload("res://assets/musicOff.png")
+var music_off_hover = preload("res://assets/musicOff_hover.png")
+var music_off_press = preload("res://assets/musicOff_press.png")
+var music_on = preload("res://assets/musicOn.png")
+var music_on_hover = preload("res://assets/musicOn_hover.png")
+var music_on_press = preload("res://assets/musicOn_press.png")
+var muted = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var options = $VBoxContainer/PauseMenu/VBoxContainer.get_children()
@@ -20,6 +28,19 @@ func toggle_pause():
 	var pause_menu = $VBoxContainer/PauseMenu
 	pause_menu.visible = !pause_menu.visible
 	get_tree().paused = pause_menu.visible
+	
+func toggle_mute():
+	var btn = $VBoxContainer/HBoxContainer/Mute_btn
+	if muted:
+		btn.set_normal_texture(music_off)
+		btn.set_hover_texture(music_off_hover)
+		btn.set_pressed_texture(music_off_press)
+	else:
+		btn.set_normal_texture(music_on)
+		btn.set_hover_texture(music_on_hover)
+		btn.set_pressed_texture(music_on_press)
+	muted = !muted
+	
 
 func _on_Pause_btn_pressed():
 	toggle_pause()
@@ -49,3 +70,7 @@ func on_option_mouseleaved(emitter):
 	var arrow = emitter.get_child(0) as TextureRect
 	arrow.set_texture(empty_texture)
 	
+
+
+func _on_Mute_btn_pressed():
+	toggle_mute()
