@@ -10,6 +10,7 @@ export (String) var team = "yellow"
 
 var text = String(nb_needed)
 var offset
+var color = Color(1,1,1)
 
 var is_full = false
 
@@ -22,11 +23,11 @@ func set_nb_shown(nb):
 func _ready():
 	set_nb_shown(nb_needed)
 	$CollisionShape2D.shape.extents = size / 2
-	var color = Teams.colors[team]
+	color = Teams.colors[team]
 	color.a = 0.3
-	style_box.bg_color = color
 	
 func _draw():
+	style_box.bg_color = color
 	draw_style_box(style_box, Rect2(-size/2, size))
 	draw_string(font, offset , text, Color(0.3, 0.3, 0.3, 0.8) )
 	

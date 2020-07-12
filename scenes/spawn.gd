@@ -4,6 +4,7 @@ extends Node2D
 export (float) var radius = 10 setget _set_radius
 export (int) var nb_spawn = 5
 export (NodePath) var people_parent
+export (String) var team = "brown"
 
 func _set_radius(v):
 	radius = v
@@ -20,6 +21,7 @@ func _ready():
 			var angle = rng.randf_range(0, 2*PI)
 			var dist = rng.randf_range(0, radius)
 			p.position = dist * Vector2(cos(angle), sin(angle)) + position
+			p.TEAM = team
 			parent.add_child(p)
 
 

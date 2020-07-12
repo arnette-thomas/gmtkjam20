@@ -59,7 +59,6 @@ const lut_ry = {
 }
 
 func get_rx(progress):
-	print(progress)
 	var rx
 	if progress < 0.25:
 		rx = 0
@@ -90,7 +89,7 @@ func _physics_process(_delta):
 		var other = body as Person
 		if other:
 			var diff = body.position - position
-			if direction.dot(other.direction) > 0:
+			if direction.dot(other.direction) > 0 and other.TEAM == TEAM:
 				var dist = diff.length() / $InfluenceArea/CollisionShape2D.shape.radius
 				nb_influences += 1
 				if dist < RAD_REPULS:
