@@ -14,20 +14,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/cursor.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
+"class": "Main",
+"language": "GDScript",
+"path": "res://scenes/Main.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Person",
 "language": "GDScript",
 "path": "res://scenes/person.gd"
 } ]
 _global_script_class_icons={
 "Cursor": "",
+"Main": "",
 "Person": ""
 }
 
 [application]
 
 config/name="Proto"
-run/main_scene="res://lvls/lvl1.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
