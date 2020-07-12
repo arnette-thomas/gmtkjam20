@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/pause_hover.png" type="Texture" id=1]
 [ext_resource path="res://assets/pause.png" type="Texture" id=2]
@@ -19,6 +19,18 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 35
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -45,7 +57,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 430.0
-margin_bottom = 270.0
+margin_bottom = 316.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 430.0
@@ -53,6 +65,15 @@ margin_bottom = 50.0
 size_flags_horizontal = 9
 size_flags_vertical = 5
 alignment = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer"]
+visible = false
+margin_top = 2.0
+margin_right = 322.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Pause"
 
 [node name="Mute_btn" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 326.0
@@ -76,19 +97,11 @@ texture_hover = ExtResource( 1 )
 visible = false
 margin_top = 54.0
 margin_right = 430.0
-margin_bottom = 208.0
-
-[node name="Label" type="Label" parent="VBoxContainer/PauseMenu"]
-margin_right = 430.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 1 )
-text = "Pause"
-align = 1
+margin_bottom = 266.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PauseMenu"]
-margin_top = 50.0
 margin_right = 430.0
-margin_bottom = 154.0
+margin_bottom = 212.0
 
 [node name="ResumeOption" type="HBoxContainer" parent="VBoxContainer/PauseMenu/VBoxContainer"]
 margin_right = 430.0
@@ -108,10 +121,48 @@ margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
 text = "Resume"
 
-[node name="MainMenuOption" type="HBoxContainer" parent="VBoxContainer/PauseMenu/VBoxContainer"]
+[node name="RestartOption" type="HBoxContainer" parent="VBoxContainer/PauseMenu/VBoxContainer"]
 margin_top = 54.0
 margin_right = 430.0
 margin_bottom = 104.0
+script = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PauseMenu/VBoxContainer/RestartOption"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="VBoxContainer/PauseMenu/VBoxContainer/RestartOption"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 206.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 5 )
+text = "Restart Level"
+
+[node name="NextOption" type="HBoxContainer" parent="VBoxContainer/PauseMenu/VBoxContainer"]
+margin_top = 108.0
+margin_right = 430.0
+margin_bottom = 158.0
+script = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PauseMenu/VBoxContainer/NextOption"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="VBoxContainer/PauseMenu/VBoxContainer/NextOption"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 162.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 4 )
+text = "Skip Level"
+
+[node name="MainMenuOption" type="HBoxContainer" parent="VBoxContainer/PauseMenu/VBoxContainer"]
+margin_top = 162.0
+margin_right = 430.0
+margin_bottom = 212.0
 script = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PauseMenu/VBoxContainer/MainMenuOption"]
